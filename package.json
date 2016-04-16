@@ -1,0 +1,22 @@
+{
+  "name": "projectskeleton",
+  "version": "1.0.0",
+  "description": "A skeleton for my projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kidde82/ProjectSkeleton.git"
+  },
+  "keywords": [
+    "skeleton"
+  ],
+  "author": "Christian Persson <kidde82@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kidde82/ProjectSkeleton/issues"
+  },
+  "homepage": "https://github.com/Kidde82/ProjectSkeleton#readme"
+}
