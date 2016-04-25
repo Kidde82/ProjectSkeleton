@@ -1,9 +1,9 @@
 class Template {
     constructor(public greeting: string) { }
-    init() {
+    public init() {
         return this.greeting;
     }
 };
 
-var greeter = new Template("Hello, world!!!!!");
-console.log(greeter.init());
+let greeterOne = new Template("Hello, world!!!!!");
+console.log(greeterOne.init());
