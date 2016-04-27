@@ -4,5 +4,6 @@ module.exports = function() {
     var plugins = this.opts.plugins;
     var config = this.opts.config;
 
-    return plugins.del(config.cleanPaths);
+    return gulp.src(config.build.artifacts)
+        .pipe(gulp.dest(config.wwwroot.path));
 };

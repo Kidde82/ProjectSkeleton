@@ -3,7 +3,8 @@ var plugins = require("gulp-load-plugins")({
     pattern: [
         "gulp-*",
         "gulp.*",
-        "del"
+        "del",
+		"run-sequence"
     ]
 });
 var config = require("./gulp/config");
@@ -16,5 +17,5 @@ require("gulp-task-loader")({
 
 gulp.task("default", () => {
    console.log("yep started");
-   gulp.watch("./src/**/*.ts", ["script:compile"]);  
+   gulp.watch("./src/**/*.ts", ["script:compile"]);
 });
