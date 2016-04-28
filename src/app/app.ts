@@ -1,5 +1,6 @@
 angular.module("myApp", [
 	"ui.router",
+	"myApp.Templates",
 	"myApp.Main"
 ])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -12,7 +13,7 @@ angular.module("myApp", [
   // Now set up the states
   $stateProvider
     .state("startpage", {
-      templateUrl: "app/main/main.html",
+      templateUrl: "main/main.html",
 	  url: "/"
     });
 });
