@@ -29,7 +29,6 @@ module.exports = {
 	cleanPaths: [
 		"./build",
 		"./dist",
-		"./wwwroot/index.html",
 		"./wwwroot/app"
 	],
 	tsConfig: {
