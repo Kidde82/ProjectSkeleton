@@ -1,17 +1,9 @@
-module myApp.Main {
-	"use strict";
-
-	export class MainController {
-		constructor() {
-			this.init();
-		}
-
-		private init(): void {
-			console.log("Main Controller");
-		}
+export class MainController {
+	constructor() {
+		this.init();
 	}
 
-	angular
-		.module("myApp.Main")
-		.controller("MainController", MainController);
+	init(): void {
+		// MainController
+	}
 }

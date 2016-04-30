@@ -32,10 +32,10 @@ module.exports = {
 		"./wwwroot/app"
 	],
 	tsConfig: {
-		module: "commonjs",
+		module: "amd",
 		target: "es5",
 		noImplicitAny: false,
-		removeComments: true,
+		removeComments: false,
 		declaration: true,
 		sourceMap: false
 	}
