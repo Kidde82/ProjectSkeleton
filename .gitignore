@@ -1,4 +1,6 @@
 .idea
 node_modules
 build
-wwwroot
+wwwroot/bower_components
+wwwroot/apps
+wwwroot/index.html

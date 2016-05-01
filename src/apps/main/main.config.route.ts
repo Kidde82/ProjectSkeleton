@@ -15,7 +15,7 @@ export default function mainRouteFunc(
 	$stateProvider
 	.state("startpage", {
 		controller: MainController,
-		templateUrl: "main/main.html",
+		templateUrl: "main.html",
 		url: "/"
 	});
 }

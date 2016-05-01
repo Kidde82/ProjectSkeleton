@@ -1,13 +1,20 @@
 var gulp = require("gulp");
+var plugins = {};
+var config = {};
+
+function compile(src, dest) {
+    return gulp.src(src)
+		.pipe(
+			plugins.sass({
+				outputStyle: "compressed"
+			}).on("error", plugins.sass.logError))
+		.pipe(gulp.dest(dest));
+}
 
 module.exports = function() {
-    var plugins = this.opts.plugins;
-    var config = this.opts.config;
-    
-    return gulp.src(config.scssPaths)
-        .pipe(
-            plugins.sass({
-                    outputStyle: 'compressed'
-                }).on('error', plugins.sass.logError))
-        .pipe(gulp.dest(config.build.path));   
+	plugins = this.opts.plugins;
+	config = this.opts.config;
+
+	return compile(config.src.main.scss, config.build.main.path);
 };
+

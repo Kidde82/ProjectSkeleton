@@ -1,11 +1,17 @@
 var gulp = require("gulp");
+var plugins = {};
+var config = {};
+
+function compile(src, dest, temlateName) {
+	return gulp.src(src)
+		.pipe(plugins.angularHtmlify())
+		.pipe(plugins.ngTemplates({ module: temlateName, filename: `${temlateName}.js`}))
+		.pipe(gulp.dest(dest));
+}
 
 module.exports = function() {
-    var plugins = this.opts.plugins;
-    var config = this.opts.config;
+    plugins = this.opts.plugins;
+    config = this.opts.config;
 
-  return gulp.src(config.src.path + "/app/**/*.html")
-    .pipe(plugins.angularHtmlify())
-	.pipe(plugins.ngTemplates({ module: "myApp.Templates"}))
-    .pipe(gulp.dest(config.wwwroot.path + "/app"));
+	return compile(config.src.main.html, config.wwwroot.main.path, config.wwwroot.main.templateName);
 };

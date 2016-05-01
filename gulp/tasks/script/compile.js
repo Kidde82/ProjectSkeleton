@@ -1,13 +1,19 @@
 var gulp = require("gulp");
+var plugins = {};
+var config = {};
 
-module.exports = function() {
-    var plugins = this.opts.plugins;
-    var config = this.opts.config;
-
-    var result = gulp.src(config.tsPaths)
+function compile(src, dest) {
+    var result = gulp.src(src)
         .pipe(plugins.typescript(config.tsConfig))
 
 	return result.js
 		.pipe(plugins.ngAnnotate())
-        .pipe(gulp.dest(config.build.path))
+        .pipe(gulp.dest(dest))
+}
+
+module.exports = function() {
+    plugins = this.opts.plugins;
+    config = this.opts.config;
+
+	return compile(config.src.main.ts, config.build.main.path);
 };

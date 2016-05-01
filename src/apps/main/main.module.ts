@@ -5,7 +5,7 @@ import * as angular from "angular";
 
 let app = angular.module(consts.moduleName, [
 	"ui.router",
-	"myApp.Templates"
+	consts.templateName
 ]);
 
 app.constant(consts.id, consts);

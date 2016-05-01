@@ -6,7 +6,7 @@ module.exports = function() {
 
 	gulp.src(config.wwwroot.path)
 	.pipe(plugins.webserver({
-		fallback: 'index.html',
+		fallback: "index.html",
 		livereload: true,
 		open: true,
 		port: 8585

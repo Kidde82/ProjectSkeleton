@@ -1,13 +1,19 @@
 var gulp = require("gulp");
+var plugins = {};
+var config = {};
 
-module.exports = function() {
-    var plugins = this.opts.plugins;
-    var config = this.opts.config;
-
-	return gulp.src(config.scssPaths)
+function lint(src) {
+	return gulp.src(src)
     	.pipe(
 			plugins.scssLint({
-				"config": "stylelint.yml"
+				"config": config.lint.style
 			})
 		);
+}
+
+module.exports = function() {
+    plugins = this.opts.plugins;
+    config = this.opts.config;
+
+	return lint(config.src.main.scss);
 };
