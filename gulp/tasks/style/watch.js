@@ -8,5 +8,8 @@ module.exports = function(callback) {
 		[
 			"style:compile"
 		],
+		[
+			"copy:styles"
+		],
 		callback);
 };

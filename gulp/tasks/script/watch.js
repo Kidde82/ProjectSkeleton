@@ -8,5 +8,8 @@ module.exports = function(callback) {
 		[
 			"script:compile"
 		],
+		[
+			"copy:scripts"
+		],
 		callback);
 };
