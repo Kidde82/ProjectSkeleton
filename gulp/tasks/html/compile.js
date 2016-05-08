@@ -9,9 +9,21 @@ function compile(src, dest, temlateName) {
 		.pipe(gulp.dest(dest));
 }
 
-module.exports = function() {
+module.exports = function(callback) {
     plugins = this.opts.plugins;
     config = this.opts.config;
 
-	return compile(config.src.main.html, config.wwwroot.main.path, config.wwwroot.main.templateName);
+	plugins.runSequence(
+		"html:compile:common",
+		"html:compile:main",
+		callback
+	);
 };
+
+gulp.task("html:compile:common", () => {
+	return compile(config.src.common.html, config.wwwroot.common.path, config.wwwroot.common.templateName);
+});
+
+gulp.task("html:compile:main", () => {
+	return compile(config.src.main.html, config.wwwroot.main.path, config.wwwroot.main.templateName);
+});

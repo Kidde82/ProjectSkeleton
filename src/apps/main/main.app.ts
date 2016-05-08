@@ -6,7 +6,9 @@ app.config(() => {
 });
 
 angular.element(document).ready(() => {
-	angular.bootstrap(document.documentElement, ["app-main"]);
+	angular.bootstrap(document.documentElement, [app.name], {
+		strictDi: true
+	});
 });
 
 export default app;

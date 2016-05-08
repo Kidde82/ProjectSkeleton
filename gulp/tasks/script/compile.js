@@ -11,9 +11,21 @@ function compile(src, dest) {
         .pipe(gulp.dest(dest))
 }
 
-module.exports = function() {
+module.exports = function(callback) {
     plugins = this.opts.plugins;
     config = this.opts.config;
 
-	return compile(config.src.main.ts, config.build.main.path);
+	plugins.runSequence(
+		"script:compile:common",
+		"script:compile:main",
+		callback
+	);
 };
+
+gulp.task("script:compile:common", () => {
+	return compile(config.src.common.ts, config.build.common.path);
+});
+
+gulp.task("script:compile:main", () => {
+	return compile(config.src.main.ts, config.build.main.path);
+});

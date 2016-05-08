@@ -8,9 +8,21 @@ function lint(src) {
         .pipe(plugins.tslint.report("verbose"))
 }
 
-module.exports = function() {
+module.exports = function(callback) {
     plugins = this.opts.plugins;
     config = this.opts.config;
 
-	return lint(config.src.main.ts);
+	plugins.runSequence(
+		"script:lint:common",
+		"script:lint:main",
+		callback
+	);
 };
+
+gulp.task("script:lint:common", () => {
+	return lint(config.src.common.ts);
+});
+
+gulp.task("script:lint:main", () => {
+	return lint(config.src.main.ts);
+});

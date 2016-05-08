@@ -4,6 +4,7 @@ const wwwroot = "wwwroot";
 const apps = "apps";
 const assets = "assets";
 
+const common = "common";
 const main = "main";
 
 module.exports = {
@@ -11,6 +12,13 @@ module.exports = {
 		path: `./${src}`,
 		assets: {
 			images: `/${assets}/images`
+		},
+		common: {
+			path: src,
+			html: `./${src}/${apps}/${common}/**/*.html`,
+			ts: `./${src}/${apps}/${common}/**/*.ts`,
+			spec: `./${src}/${apps}/${common}/**/*.spec.ts`,
+			scss: `./${src}/${apps}/${common}/**/*.scss`
 		},
 		main: {
 			path: src,
@@ -22,6 +30,12 @@ module.exports = {
 	},
 	build: {
 		path: build,
+		common: {
+			path: `${build}/${apps}/${common}/`,
+			js: `${build}/${apps}/${common}/**/*.js`,
+			spec: `${build}/${apps}/${common}/**/*.spec.js`,
+			css: `${build}/${apps}/${common}/**/*.css`
+		},
 		main: {
 			path: `${build}/${apps}/${main}/`,
 			js: `${build}/${apps}/${main}/**/*.js`,
@@ -38,9 +52,13 @@ module.exports = {
 		]
 	},
 	wwwroot: {
-		path: wwwroot,
+		path: `./${wwwroot}`,
 		apps: {
 			path: `./${wwwroot}/${apps}`
+		},
+		common: {
+			templateName: "common.templates",
+			path: `./${wwwroot}/${apps}/${common}`
 		},
 		main: {
 			templateName: "main.templates",

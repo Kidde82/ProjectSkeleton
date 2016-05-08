@@ -7,9 +7,21 @@ function copy(src, dest) {
 		.pipe(gulp.dest(dest));
 }
 
-module.exports = function() {
+module.exports = function(callback) {
     plugins = this.opts.plugins;
     config = this.opts.config;
 
-	copy(config.build.main.css, config.wwwroot.main.path);
+	plugins.runSequence(
+		"copy:styles:common",
+		"copy:styles:main",
+		callback
+	);
 };
+
+gulp.task("copy:styles:common", () => {
+	return copy(config.build.common.css, config.wwwroot.common.path);
+});
+
+gulp.task("copy:styles:main", () => {
+	return copy(config.build.main.css, config.wwwroot.main.path);
+});
