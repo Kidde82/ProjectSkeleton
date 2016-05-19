@@ -1,8 +1,8 @@
 var gulp = require("gulp");
 
 module.exports = function() {
-    var plugins = this.opts.plugins;
-    var config = this.opts.config;
+	var plugins = this.opts.plugins;
+	var config = this.opts.config;
 
 	gulp.watch(config.src.common.html, ["html:watch"]);
 	gulp.watch([config.src.common.ts, `!${config.src.common.spec}`], ["script:watch"]);

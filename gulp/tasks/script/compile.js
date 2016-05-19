@@ -3,17 +3,17 @@ var plugins = {};
 var config = {};
 
 function compile(src, dest) {
-    var result = gulp.src(src)
-        .pipe(plugins.typescript(config.tsConfig))
+	var result = gulp.src(src)
+		.pipe(plugins.typescript(config.tsConfig))
 
 	return result.js
 		.pipe(plugins.ngAnnotate())
-        .pipe(gulp.dest(dest))
+		.pipe(gulp.dest(dest))
 }
 
 module.exports = function(callback) {
-    plugins = this.opts.plugins;
-    config = this.opts.config;
+	plugins = this.opts.plugins;
+	config = this.opts.config;
 
 	plugins.runSequence(
 		"script:compile:common",

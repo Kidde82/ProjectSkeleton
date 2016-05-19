@@ -1,10 +1,13 @@
 System.config({
-	baseUrl: "/",
+	baseUrl: "",
 	transpiler: false,
 	defaultJSExtensions: true,
 	paths: {
 		"*": "/wwwroot/*",
-		"bower/*": "/bower_components/*"
+		"bower/*": "wwwroot/bower_components/*",
+		"systemjs": "node_modules/systemjs/dist/system.js",
+		"system-polyfills": "node_modules/systemjs/dist/system-polyfills.js",
+		"es6-module-loader": "node_modules/es6-module-loader/dist/es6-module-loader.js"
 	},
 	meta: {
 		"angular-ui-router": {

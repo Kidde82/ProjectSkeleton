@@ -10,8 +10,8 @@ function compile(src, dest, temlateName) {
 }
 
 module.exports = function(callback) {
-    plugins = this.opts.plugins;
-    config = this.opts.config;
+	plugins = this.opts.plugins;
+	config = this.opts.config;
 
 	plugins.runSequence(
 		"html:compile:common",

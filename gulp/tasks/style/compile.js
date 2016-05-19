@@ -3,7 +3,7 @@ var plugins = {};
 var config = {};
 
 function compile(src, dest) {
-    return gulp.src(src)
+	return gulp.src(src)
 		.pipe(
 			plugins.sass({
 				outputStyle: "compressed"

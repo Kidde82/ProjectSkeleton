@@ -7,9 +7,9 @@ function copy(src, dest) {
 		.pipe(gulp.dest(dest));
 }
 
-module.exports = function(callback) {
-    plugins = this.opts.plugins;
-    config = this.opts.config;
+module.exports = function (callback) {
+	plugins = this.opts.plugins;
+	config = this.opts.config;
 
 	plugins.runSequence(
 		"copy:scripts:common",

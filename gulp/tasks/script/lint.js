@@ -3,14 +3,14 @@ var plugins = {};
 var config = {};
 
 function lint(src) {
-    return gulp.src(src)
-        .pipe(plugins.tslint())
-        .pipe(plugins.tslint.report("verbose"))
+	return gulp.src(src)
+		.pipe(plugins.tslint())
+		.pipe(plugins.tslint.report("verbose"))
 }
 
 module.exports = function(callback) {
-    plugins = this.opts.plugins;
-    config = this.opts.config;
+	plugins = this.opts.plugins;
+	config = this.opts.config;
 
 	plugins.runSequence(
 		"script:lint:common",

@@ -1,8 +1,9 @@
 {
-  "compilerOptions": {
-    "target": "ES5"
-  },
-  "exclude": [
-	  "wwwroot"
-  ]
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "amd"
+	},
+	"exclude": [
+		"wwwroot"
+	]
 }

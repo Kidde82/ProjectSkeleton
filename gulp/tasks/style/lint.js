@@ -4,7 +4,7 @@ var config = {};
 
 function lint(src) {
 	return gulp.src(src)
-    	.pipe(
+		.pipe(
 			plugins.scssLint({
 				"config": config.lint.style
 			})
@@ -12,8 +12,8 @@ function lint(src) {
 }
 
 module.exports = function(callback) {
-    plugins = this.opts.plugins;
-    config = this.opts.config;
+	plugins = this.opts.plugins;
+	config = this.opts.config;
 
 	plugins.runSequence(
 		"style:lint:common",
