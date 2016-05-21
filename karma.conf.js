@@ -5,12 +5,13 @@ module.exports = function(config) {
 			"systemjs",
 			"jasmine"
 		],
-		// reporters: ["spec"],
+		reporters: ["mocha"],
 		browsers: ["PhantomJS"],
 		plugins: [
 			"karma-systemjs",
 			"karma-phantomjs-launcher",
-			"karma-jasmine"
+			"karma-jasmine",
+			"karma-mocha-reporter"
 		],
 		files: [
 			"../build/**/*.spec.js"
