@@ -16,16 +16,16 @@ module.exports = function(callback) {
 	config = this.opts.config;
 
 	plugins.runSequence(
-		"script:compile:common",
-		"script:compile:main",
+		"test:compile:common",
+		"test:compile:main",
 		callback
 	);
 };
 
-gulp.task("script:compile:common", () => {
-	return compile(config.src.common.ts, config.build.common.path);
+gulp.task("test:compile:common", () => {
+	return compile(config.src.common.spec, config.build.common.path);
 });
 
-gulp.task("script:compile:main", () => {
-	return compile(config.src.main.ts, config.build.main.path);
+gulp.task("test:compile:main", () => {
+	return compile(config.src.main.spec, config.build.main.path);
 });

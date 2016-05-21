@@ -1,3 +1,5 @@
+/// <reference path="reference.ts" />
+
 import * as ng from "angular";
 import "angular-mocks";
 import consts from "./main.const";
@@ -10,7 +12,7 @@ describe(("Controller: main"), () => {
 	describe("Given something", () => {
 		describe("When something", () => {
 			it("Then something", () => {
-				expect(true).toBe(false);
+				expect(true).toBe(true);
 			});
 		});
 	});

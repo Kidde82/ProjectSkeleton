@@ -7,7 +7,7 @@ module.exports = function(done) {
 	var Server = plugins.karma.Server;
 
 	return new Server({
-		configFile: __dirname + "\\..\\..\\karma.conf.js",
+		configFile: __dirname + "\\..\\..\\..\\karma.conf.js",
 		singleRun: true
 	}, done).start();
 };

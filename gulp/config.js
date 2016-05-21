@@ -52,7 +52,7 @@ module.exports = {
 		]
 	},
 	wwwroot: {
-		path: `./${wwwroot}`,
+		path: `${wwwroot}`,
 		apps: {
 			path: `./${wwwroot}/${apps}`
 		},
