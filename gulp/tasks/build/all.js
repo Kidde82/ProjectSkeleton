@@ -16,19 +16,20 @@ module.exports = function(callback) {
 		],
 		[
 			"copy:all",
-			"copy:images"
+			"copy:images",
+			"copy:html"
 		],
-		[
-			"html:compile"
-		],
+		// [
+		// 	"html:compile"
+		// ],
 		[
 			"html:inject"
 		],
-		[
-			"test:compile"
-		],
-		[
-			"test:run"
-		],
+		// [
+		// 	"test:compile"
+		// ],
+		// [
+		// 	"test:run"
+		// ],
 		callback);
 };

@@ -1,0 +1,11 @@
+{
+	"port": 8000,
+	"files": ["./wwwroot/**/*.{html,css,js}"],
+	"server": {
+		"baseDir": "./wwwroot",
+		"routes": {
+			"/node_modules": "node_modules",
+			"/systemjs.config.js": "systemjs.config.js"
+		}
+	}
+}

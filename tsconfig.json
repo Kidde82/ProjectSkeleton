@@ -1,9 +1,17 @@
 {
 	"compilerOptions": {
-		"target": "ES5",
-		"module": "amd"
+		"target": "es5",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"removeComments": false,
+		"noImplicitAny": false
 	},
 	"exclude": [
-		"wwwroot"
+		"src",
+		"node_modules",
+		"wwwroot/node_modules"
 	]
 }

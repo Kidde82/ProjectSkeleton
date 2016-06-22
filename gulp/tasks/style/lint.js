@@ -16,16 +16,21 @@ module.exports = function(callback) {
 	config = this.opts.config;
 
 	plugins.runSequence(
-		"style:lint:common",
+		"style:lint:app",
 		"style:lint:main",
+		"style:lint:startpage",
 		callback
 	);
 };
 
-gulp.task("style:lint:common", () => {
-	return lint(config.src.common.scss);
+gulp.task("style:lint:app", () => {
+	return lint(config.src.app.scss);
 });
 
 gulp.task("style:lint:main", () => {
 	return lint(config.src.main.scss);
+});
+
+gulp.task("style:lint:startpage", () => {
+	return lint(config.src.startpage.scss);
 });

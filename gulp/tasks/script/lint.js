@@ -13,16 +13,26 @@ module.exports = function(callback) {
 	config = this.opts.config;
 
 	plugins.runSequence(
-		"script:lint:common",
+		"script:lint:app",
 		"script:lint:main",
+		"script:lint:services",
+		"script:lint:startpage",
 		callback
 	);
 };
 
-gulp.task("script:lint:common", () => {
-	return lint(config.src.common.ts);
+gulp.task("script:lint:app", () => {
+	return lint(config.src.app.ts);
 });
 
 gulp.task("script:lint:main", () => {
 	return lint(config.src.main.ts);
+});
+
+gulp.task("script:lint:services", () => {
+	return lint(config.src.services.ts);
+});
+
+gulp.task("script:lint:startpage", () => {
+	return lint(config.src.startpage.ts);
 });

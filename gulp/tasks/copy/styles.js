@@ -12,16 +12,21 @@ module.exports = function(callback) {
 	config = this.opts.config;
 
 	plugins.runSequence(
-		"copy:styles:common",
+		"copy:styles:app",
 		"copy:styles:main",
+		"copy:styles:startpage",
 		callback
 	);
 };
 
-gulp.task("copy:styles:common", () => {
-	return copy(config.build.common.css, config.wwwroot.common.path);
+gulp.task("copy:styles:app", () => {
+	return copy(config.build.app.css, config.wwwroot.app.path);
 });
 
 gulp.task("copy:styles:main", () => {
 	return copy(config.build.main.css, config.wwwroot.main.path);
+});
+
+gulp.task("copy:styles:startpage", () => {
+	return copy(config.build.startpage.css, config.wwwroot.startpage.path);
 });

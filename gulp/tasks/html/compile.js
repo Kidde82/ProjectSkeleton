@@ -2,10 +2,10 @@ var gulp = require("gulp");
 var plugins = {};
 var config = {};
 
-function compile(src, dest, temlateName) {
+function compile(src, dest, templateName) {
 	return gulp.src(src)
 		.pipe(plugins.angularHtmlify())
-		.pipe(plugins.ngTemplates({ module: temlateName, filename: `${temlateName}.js`}))
+		.pipe(plugins.ngTemplates({ module: templateName, filename: `${templateName}.js`}))
 		.pipe(gulp.dest(dest));
 }
 

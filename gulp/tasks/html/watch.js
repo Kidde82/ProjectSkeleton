@@ -2,8 +2,11 @@ module.exports = function(callback) {
 	var plugins = this.opts.plugins;
 
 	return plugins.runSequence(
+		// [
+		// 	"html:compile"
+		// ],
 		[
-			"html:compile"
+			"copy:html"
 		],
 		[
 			"html:inject"

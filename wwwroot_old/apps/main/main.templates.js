@@ -1,0 +1,1 @@
+angular.module("main.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("main.html","<section class=\"main\">\r\n	<h1>Main</h1>\r\n</section>");}]);
