@@ -4,4 +4,9 @@ A skeleton for my projects
 ## TODO:
 * Find another scss linter
 
- mklink /j C:\Work\Projects\Github\ProjectSkeleton\node_modules C:\Work\Projects\Github\ProjectSkeleton\wwwroot2\node_modules
+¤¤ SETUP:
+
+ mklink /j node_modules wwwroot\node_modules
+ npm install
+gulp build
+gulp watch
