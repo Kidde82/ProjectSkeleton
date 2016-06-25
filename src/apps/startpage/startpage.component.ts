@@ -16,16 +16,10 @@ export class StartpageComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		console.log("oninit");
 		this.sampleService.getSome()
 			.then(samples => this.samples = samples)
 			.then(() => {
 				console.log(this.samples);
 			});
-	}
-
-	gotoDetail(sample: any) {
-		let link = ["SampleDetail", { id: sample.id }];
-		this.router.navigate(link);
 	}
 }

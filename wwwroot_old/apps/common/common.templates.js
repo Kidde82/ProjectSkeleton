@@ -1,1 +1,0 @@
-angular.module("common.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("pages/layout/layout.html","<h1>Layout</h1>");}]);
