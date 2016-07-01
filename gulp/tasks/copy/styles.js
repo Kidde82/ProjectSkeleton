@@ -13,6 +13,7 @@ module.exports = function(callback) {
 
 	plugins.runSequence(
 		"copy:styles:app",
+		"copy:styles:common",
 		"copy:styles:main",
 		"copy:styles:startpage",
 		callback
@@ -21,6 +22,10 @@ module.exports = function(callback) {
 
 gulp.task("copy:styles:app", () => {
 	return copy(config.build.app.css, config.wwwroot.app.path);
+});
+
+gulp.task("copy:styles:common", () => {
+	return copy(config.build.common.css, config.wwwroot.common.path);
 });
 
 gulp.task("copy:styles:main", () => {

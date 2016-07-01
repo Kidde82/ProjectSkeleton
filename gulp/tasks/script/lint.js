@@ -14,6 +14,7 @@ module.exports = function(callback) {
 
 	plugins.runSequence(
 		"script:lint:app",
+		"script:lint:common",
 		"script:lint:main",
 		"script:lint:services",
 		"script:lint:startpage",
@@ -23,6 +24,10 @@ module.exports = function(callback) {
 
 gulp.task("script:lint:app", () => {
 	return lint(config.src.app.ts);
+});
+
+gulp.task("script:lint:common", () => {
+	return lint(config.src.common.ts);
 });
 
 gulp.task("script:lint:main", () => {

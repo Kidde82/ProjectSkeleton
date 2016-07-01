@@ -13,6 +13,7 @@ module.exports = function (callback) {
 
 	plugins.runSequence(
 		"copy:scripts:app",
+		"copy:scripts:common",
 		"copy:scripts:main",
 		"copy:scripts:services",
 		"copy:scripts:startpage",
@@ -22,6 +23,10 @@ module.exports = function (callback) {
 
 gulp.task("copy:scripts:app", () => {
 	return copy([config.build.app.js, `!${config.build.app.spec}`], config.wwwroot.app.path);
+});
+
+gulp.task("copy:scripts:common", () => {
+	return copy([config.build.common.js, `!${config.build.common.spec}`], config.wwwroot.common.path);
 });
 
 gulp.task("copy:scripts:main", () => {

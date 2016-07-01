@@ -13,6 +13,7 @@ module.exports = function (callback) {
 
 	plugins.runSequence(
 		"copy:html:app",
+		"copy:html:common",
 		"copy:html:main",
 		"copy:html:startpage",
 		callback
@@ -21,6 +22,10 @@ module.exports = function (callback) {
 
 gulp.task("copy:html:app", () => {
 	return copy(config.src.app.html, config.wwwroot.app.path);
+});
+
+gulp.task("copy:html:common", () => {
+	return copy(config.src.common.html, config.wwwroot.common.path);
 });
 
 gulp.task("copy:html:main", () => {

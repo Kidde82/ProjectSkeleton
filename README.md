@@ -6,7 +6,7 @@ A skeleton for my projects
 
 ¤¤ SETUP:
 
- mklink /j node_modules wwwroot\node_modules
- npm install
+mklink /j wwwroot\node_modules node_modules
+npm install
 gulp build
 gulp watch

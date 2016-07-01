@@ -5,6 +5,7 @@ const apps = "apps";
 const assets = "assets";
 
 const app = "app";
+const common = "common";
 const main = "main";
 const services = "services";
 const startpage = "startpage";
@@ -21,6 +22,13 @@ module.exports = {
 			ts: `./${src}/${apps}/${app}/**/*.ts`,
 			spec: `./${src}/${apps}/${app}/**/*.spec.ts`,
 			scss: `./${src}/${apps}/${app}/**/*.scss`
+		},
+		common: {
+			path: src,
+			html: `./${src}/${apps}/${common}/**/*.html`,
+			ts: `./${src}/${apps}/${common}/**/*.ts`,
+			spec: `./${src}/${apps}/${common}/**/*.spec.ts`,
+			scss: `./${src}/${apps}/${common}/**/*.scss`
 		},
 		main: {
 			path: src,
@@ -51,6 +59,12 @@ module.exports = {
 			js: `${build}/${apps}/${app}/**/*.js`,
 			spec: `${build}/${apps}/${app}/**/*.spec.js`,
 			css: `${build}/${apps}/${app}/**/*.css`
+		},
+		common: {
+			path: `${build}/${apps}/${common}/`,
+			js: `${build}/${apps}/${common}/**/*.js`,
+			spec: `${build}/${apps}/${common}/**/*.spec.js`,
+			css: `${build}/${apps}/${common}/**/*.css`
 		},
 		main: {
 			path: `${build}/${apps}/${main}/`,
@@ -87,6 +101,9 @@ module.exports = {
 		app: {
 			path: `./${wwwroot}/${apps}/${app}`
 		},
+		common: {
+			path: `./${wwwroot}/${apps}/${common}`
+		},
 		main: {
 			path: `./${wwwroot}/${apps}/${main}`
 		},
@@ -103,5 +120,8 @@ module.exports = {
 	],
 	lint: {
 		style: "stylelint.yml"
+	},
+	typings: {
+		definitions: "./typings/**/*.d.ts"
 	}
 };

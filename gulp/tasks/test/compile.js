@@ -19,6 +19,7 @@ module.exports = function(callback) {
 
 	plugins.runSequence(
 		"test:compile:app",
+		"test:compile:common",
 		"test:compile:main",
 		"test:compile:services",
 		"test:compile:startpage",
@@ -28,6 +29,10 @@ module.exports = function(callback) {
 
 gulp.task("test:compile:app", () => {
 	return compile(config.src.app.spec, config.build.app.path);
+});
+
+gulp.task("test:compile:common", () => {
+	return compile(config.src.common.spec, config.build.common.path);
 });
 
 gulp.task("test:compile:main", () => {
